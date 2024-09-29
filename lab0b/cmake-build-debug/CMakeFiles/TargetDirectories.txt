@@ -1,0 +1,3 @@
+C:/OOOP/CPP_LAB/lab0b/cmake-build-debug/CMakeFiles/lab0b.dir
+C:/OOOP/CPP_LAB/lab0b/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/OOOP/CPP_LAB/lab0b/cmake-build-debug/CMakeFiles/rebuild_cache.dir
