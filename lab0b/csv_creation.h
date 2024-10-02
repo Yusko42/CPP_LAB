@@ -5,7 +5,7 @@
 #include <map>
 #include <vector>
 
-class CSV_creation {
+class CsvCreation {
 private:
     std::string input_file; //in.txt
     std::string output_file; //out.csv
@@ -15,16 +15,16 @@ private:
 
     float words_counted = 0.0;
 
-    static bool compare(std::pair<std::string, int>*, std::pair<std::string, int>*);
-    std::string clean_word(std::string&);
+    static bool Compare(std::pair<std::string, int>*, std::pair<std::string, int>*);
+    std::string CleanWord(std::string&);
 
 public:
-    CSV_creation(std::string&, std::string&);
-    void setName(std::string&, std::string&);
+    CsvCreation(std::string&, std::string&);
+    void SetName(std::string&, std::string&);
 
-    void words_from_txt();
-    void sorting();
-    int csv(std::string&);
+    void WordsFromTxt();
+    void Sorting();
+    int CsvOutput();
 };
 
 #endif //LAB0B_CSV_CREATION_H
