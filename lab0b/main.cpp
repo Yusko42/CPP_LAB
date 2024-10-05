@@ -13,11 +13,12 @@ int main(int argc, char* argv[]) {
         exit(0);
     }
 
-    CsvCreation creation(input_file, output_file);
+    TxtReading txtread(input_file);
+    txtread.WordsFromTxt();
 
-    creation.WordsFromTxt();
-    creation.Sorting();
-    creation.CsvOutput();
+    CsvCreation csvout(output_file);
+    csvout.Sorting(const_cast<std::map<std::string, int> &>(txtread.GetMap()));
+    csvout.CsvOutput(const_cast<float &>(txtread.GetCount()));
 
     return 0;
 }

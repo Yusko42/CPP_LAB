@@ -5,26 +5,34 @@
 #include <map>
 #include <vector>
 
-class CsvCreation {
+class TxtReading {
 private:
     std::string input_file; //in.txt
-    std::string output_file; //out.csv
-
     std::map<std::string, int> words;
-    std::vector<std::pair<std::string, int>*> words_ordered;
 
     float words_counted = 0.0;
-
-    static bool Compare(std::pair<std::string, int>*, std::pair<std::string, int>*);
     std::string CleanWord(std::string&);
-
 public:
-    CsvCreation(std::string&, std::string&);
-    void SetName(std::string&, std::string&);
+    explicit TxtReading(std::string&);
+    void SetName(std::string&);
 
     void WordsFromTxt();
-    void Sorting();
-    int CsvOutput();
+    const std::map<std::string, int> & GetMap() const;
+    const float & GetCount() const;
+};
+
+class CsvCreation{
+private:
+    std::string output_file; //out.csv
+    std::vector<std::pair<std::string, int>*> words_ordered;
+
+    static bool Compare(std::pair<std::string, int>*, std::pair<std::string, int>*);
+public:
+    explicit CsvCreation(std::string&);
+    void SetName(std::string&);
+
+    void Sorting(std::map<std::string, int>&);
+    int CsvOutput(float&);
 };
 
 #endif //LAB0B_CSV_CREATION_H
