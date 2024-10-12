@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include "csv_creation.h"
+#include "txt_reading.h"
 
 int main(int argc, char* argv[]) {
     //setlocale(LC_ALL, "");
@@ -17,8 +18,8 @@ int main(int argc, char* argv[]) {
     txtread.WordsFromTxt();
 
     CsvCreation csvout(output_file);
-    csvout.Sorting(const_cast<std::map<std::string, int> &>(txtread.GetMap()));
-    csvout.CsvOutput(const_cast<float &>(txtread.GetCount()));
+    csvout.Sorting(txtread.GetMap());
+    csvout.CsvOutput(txtread.GetCount());
 
     return 0;
 }

@@ -4,4 +4,5 @@ project(lab0b)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(lab0b main.cpp
-        csv_creation.cpp)
+        csv_creation.cpp
+        txt_reading.cpp)
