@@ -9,6 +9,7 @@ int main(int argc, char** argv)
     std::cout <<  "Hello world!" << "\n";
 
     std::cout << Module1::getMyName() << "\n";
+
     std::cout << Module2::getMyName() << "\n";
     std::cout << Module3::getMyName() << "\n";
 

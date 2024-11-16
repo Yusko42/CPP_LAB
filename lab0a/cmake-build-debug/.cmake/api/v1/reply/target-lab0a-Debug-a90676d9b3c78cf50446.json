@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "liblab0.a"
+			"path" : "liblab0a.a"
 		}
 	],
 	"backtrace" : 1,
@@ -56,9 +56,9 @@
 			]
 		}
 	],
-	"id" : "lab0::@6890427a1f51a3e7e1df",
-	"name" : "lab0",
-	"nameOnDisk" : "liblab0.a",
+	"id" : "lab0a::@6890427a1f51a3e7e1df",
+	"name" : "lab0a",
+	"nameOnDisk" : "liblab0a.a",
 	"paths" : 
 	{
 		"build" : ".",

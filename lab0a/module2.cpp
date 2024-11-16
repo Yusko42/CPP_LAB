@@ -4,7 +4,7 @@ namespace Module2
 {
     std::string getMyName()
     {
-        std::string name = "James";
+        std::string name = "James  ";
         return name;
     }
 }

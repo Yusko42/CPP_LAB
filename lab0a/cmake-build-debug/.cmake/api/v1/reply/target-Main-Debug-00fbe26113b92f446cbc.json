@@ -67,7 +67,7 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "lab0::@6890427a1f51a3e7e1df"
+			"id" : "lab0a::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "Main::@6890427a1f51a3e7e1df",
@@ -85,7 +85,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "liblab0.a",
+				"fragment" : "liblab0a.a",
 				"role" : "libraries"
 			},
 			{

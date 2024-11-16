@@ -1,4 +1,4 @@
-C:/Users/Сергей Юсько/Desktop/Уник/3 сем/OOOP/lab0/cmake-build-debug/CMakeFiles/lab0.dir
-C:/Users/Сергей Юсько/Desktop/Уник/3 сем/OOOP/lab0/cmake-build-debug/CMakeFiles/Main.dir
-C:/Users/Сергей Юсько/Desktop/Уник/3 сем/OOOP/lab0/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Сергей Юсько/Desktop/Уник/3 сем/OOOP/lab0/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/OOOP/CPP_LAB/lab0a/cmake-build-debug/CMakeFiles/lab0a.dir
+C:/OOOP/CPP_LAB/lab0a/cmake-build-debug/CMakeFiles/Main.dir
+C:/OOOP/CPP_LAB/lab0a/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/OOOP/CPP_LAB/lab0a/cmake-build-debug/CMakeFiles/rebuild_cache.dir

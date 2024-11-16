@@ -28,7 +28,7 @@
 					[
 						0
 					],
-					"name" : "lab0",
+					"name" : "lab0a",
 					"targetIndexes" : 
 					[
 						0,
@@ -41,15 +41,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Main::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Main-Debug-c91d34e3a231f49d4f9b.json",
+					"jsonFile" : "target-Main-Debug-00fbe26113b92f446cbc.json",
 					"name" : "Main",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "lab0::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-lab0-Debug-479499e8949ba367bdc2.json",
-					"name" : "lab0",
+					"id" : "lab0a::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lab0a-Debug-a90676d9b3c78cf50446.json",
+					"name" : "lab0a",
 					"projectIndex" : 0
 				}
 			]
@@ -58,8 +58,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/\u0421\u0435\u0440\u0433\u0435\u0439 \u042e\u0441\u044c\u043a\u043e/Desktop/\u0423\u043d\u0438\u043a/3 \u0441\u0435\u043c/OOOP/lab0/cmake-build-debug",
-		"source" : "C:/Users/\u0421\u0435\u0440\u0433\u0435\u0439 \u042e\u0441\u044c\u043a\u043e/Desktop/\u0423\u043d\u0438\u043a/3 \u0441\u0435\u043c/OOOP/lab0"
+		"build" : "C:/OOOP/CPP_LAB/lab0a/cmake-build-debug",
+		"source" : "C:/OOOP/CPP_LAB/lab0a"
 	},
 	"version" : 
 	{

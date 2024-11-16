@@ -11,8 +11,8 @@ void CsvCreation::SetName(std::string &output){
     output_file = output;
 }
 
-bool CsvCreation::Compare(const std::pair<const std::string, int>* a,
-                          const std::pair<const std::string, int>* b) {
+bool CsvCreation::Compare(const std::pair<std::string, int>* a,
+                          const std::pair<std::string, int>* b) {
     if (a->second == b->second)
         return a->first < b->first;
     return a->second > b->second;
@@ -20,7 +20,7 @@ bool CsvCreation::Compare(const std::pair<const std::string, int>* a,
 
 void CsvCreation::Sorting(const std::map<std::string, int>& not_ordered){
     for (const auto& pair: not_ordered) {
-        words_ordered.push_back(const_cast<std::pair<const std::string, int>*>(&pair));
+        words_ordered.push_back(&pair);
     }
     std::sort(words_ordered.begin(), words_ordered.end(), Compare);
 
