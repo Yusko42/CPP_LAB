@@ -32,6 +32,44 @@ public:
     BitArray(const BitArray& b);
 
     /**
+* @class BitReference
+* @brief Proxy class for representing bits in a BitArray object.
+*
+* Enables iteration over bits in a`BitArray` string, providing
+* the ability to change the bit values.
+*/
+    class BitReference {
+    public:
+        /**
+         * @brief Constructs a BitReference.
+         * @param string Reference to the bit array string where the bit is stored.
+         * @param index Position of a bit index.
+         *
+         * Initializes the reference with the string and the bit index within that string.
+         */
+        BitReference(unsigned long& string, unsigned int index);
+
+        /**
+         * @brief Assignment operator.
+         * @param value New value of the referenced bit.
+         * @return Reference to the bit reference.
+         * Sets the referenced bit to the given value (true or false).
+         */
+        BitReference& operator=(bool value);
+
+        /**
+         * @brief Conversion operator.
+         * @return The value of the referenced bit.
+         *
+         * Converts the referenced bit to a bool for reading its value.
+         */
+        operator bool() const;
+    private:
+        unsigned long& string_of_array;  /** // Reference to the string containing the bit */
+        unsigned bit_pos; /** Index of the bit within the word */
+    };
+
+    /**
  * @class BitIterator
  * @brief Iterator for traversing bits in a BitArray object.
  *
@@ -47,13 +85,19 @@ public:
          *
          * Creates an iterator pointing to the `num_pos` position in the `array`.
          */
-        BitIterator(const BitArray& array, unsigned int num_pos);
+        BitIterator(BitArray& array, unsigned int num_pos);
 
         /**
-         * @brief Dereference operator.
+         * @brief Overloaded dereference operator.
          * @return The value of the current bit (true if the bit is 1; false if the bit is 0).
          */
-        bool operator*();
+        bool operator*() const;
+
+        /**
+         * @brief Overloaded dereference operator.
+         * @return The reference to the bit.
+         */
+        BitReference operator*();
 
         /**
          * @brief Prefix increment operator.
@@ -78,7 +122,7 @@ public:
         bool operator==(const BitIterator& b) const;
 
     private:
-        const BitArray& bit_arr;   /**< Reference to the bit array being iterated over. */
+        BitArray& bit_arr;   /**< Reference to the bit array being iterated over. */
         unsigned int bit_pos;      /**< Current iterator position (bit index). */
     };
 
@@ -86,13 +130,13 @@ public:
      * @brief Returns an iterator pointing to the first bit in the array.
      * @return An iterator pointing to the beginning of the bit array.
      */
-    [[nodiscard]] BitIterator begin() const;
+    [[nodiscard]] BitIterator begin();
 
     /**
      * @brief Returns an iterator pointing past the last bit in the array.
      * @return An iterator pointing to the end of the bit array.
      */
-    [[nodiscard]] BitIterator end() const;
+    [[nodiscard]] BitIterator end();
 
     /** @brief Prints the contents of the bit array (for debugging purposes).
      * @param i The number of an element in data to display.

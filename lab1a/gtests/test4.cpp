@@ -2,23 +2,19 @@
 #include <gtest/gtest.h>
 
 TEST(BitIteratorTopic, Equal){
-    BitArray bitarray(11, 0b10100000101);
-    auto iterator1 = bitarray.begin();
-    auto iterator2 = bitarray.end();
-    EXPECT_TRUE(*iterator1 == *iterator2);
+    BitArray bitArray1(11, 0b10100000101);
+    BitArray bitArray2(11, 0b10100000101);
 
-    ++iterator1;
-    EXPECT_FALSE(*iterator1 == *iterator2);
+    EXPECT_TRUE(bitArray1 == bitArray2);
+    EXPECT_FALSE(bitArray1 != bitArray2);
 }
 
 TEST(BitIteratorTopic, NotEqual){
-    BitArray bitarray(11, 0b10100000101);
-    auto iterator1 = bitarray.begin();
-    auto iterator2 = bitarray.end();
-    EXPECT_FALSE(*iterator1 != *iterator2);
+    BitArray bitArray1(11, 0b10100000101);
+    BitArray bitArray2(11, 0b10101000101);
 
-    ++iterator1;
-    EXPECT_TRUE(*iterator1 != *iterator2);
+    EXPECT_FALSE(bitArray1 == bitArray2);
+    EXPECT_TRUE(bitArray1 != bitArray2);
 }
 
 TEST(BitIteratorTopic, BoundCase){
@@ -33,4 +29,13 @@ TEST(BitIteratorTopic, BoundCase){
         ++iterator2;
     }
     EXPECT_TRUE(*iterator1 == *iterator2);
+}
+
+TEST(BitIteratorTopic, RangeFor) {
+    BitArray ba(10);
+    for (auto v: ba){
+        v = true;
+    }
+    //YOU HAVE TO CREATE A PROXY CLASS!!
+    EXPECT_TRUE(ba.count() == 10);
 }

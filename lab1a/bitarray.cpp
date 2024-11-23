@@ -19,11 +19,18 @@ BitArray::BitArray(int num_bits, unsigned long value) : len(num_bits) {
 
 BitArray::BitArray(const BitArray& b) : len(b.len), data(b.data) {};
 
-BitArray::BitIterator::BitIterator(const BitArray& array, unsigned int num_pos) :
-    bit_arr(array), bit_pos(num_pos) {}
+BitArray::BitIterator::BitIterator(BitArray& array, unsigned int num_pos) :
+    bit_arr(array), bit_pos(num_pos) {};
 
-bool BitArray::BitIterator::operator*() {
+//Value ONLY
+bool BitArray::BitIterator::operator*() const{
     return (bit_arr.data[bit_pos / ELEMENT_SIZE] & (1UL << (bit_pos % ELEMENT_SIZE)));
+}
+
+BitArray::BitReference BitArray::BitIterator::operator*() {
+    unsigned int data_index = bit_pos / ELEMENT_SIZE;
+    unsigned int bit_index = bit_pos % ELEMENT_SIZE;
+    return BitReference(bit_arr.data[data_index], bit_index);
 }
 
 BitArray::BitIterator& BitArray::BitIterator::operator++() {
@@ -39,12 +46,28 @@ bool BitArray::BitIterator::operator==(const BitArray::BitIterator& b) const{
     return bit_pos == b.bit_pos;
 }
 
-BitArray::BitIterator BitArray::begin() const {
+BitArray::BitIterator BitArray::begin() {
     return BitIterator(*this, 0);
 }
-BitArray::BitIterator BitArray::end() const {
-    return BitIterator(*this, len - 1);
+BitArray::BitIterator BitArray::end() {
+    return BitIterator(*this, len);
 }
+
+BitArray::BitReference::BitReference(unsigned long& string, unsigned int index) :
+        string_of_array(string), bit_pos(index) {};
+
+BitArray::BitReference& BitArray::BitReference::operator=(bool value) {
+    if (value)
+        string_of_array |= (1UL << bit_pos);
+    else
+        string_of_array &= ~(1UL << bit_pos);
+    return *this;
+}
+
+BitArray::BitReference::operator bool() const {
+    return (string_of_array >> bit_pos) & 1;
+}
+
 
 void BitArray::PrintData(int i) {
     data[i] = data[i];
