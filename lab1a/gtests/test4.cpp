@@ -36,6 +36,5 @@ TEST(BitIteratorTopic, RangeFor) {
     for (auto v: ba){
         v = true;
     }
-    //YOU HAVE TO CREATE A PROXY CLASS!!
     EXPECT_TRUE(ba.count() == 10);
 }
