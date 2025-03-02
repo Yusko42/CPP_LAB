@@ -9,7 +9,6 @@ const std::string& GUI::GetInputFile() { return input_file_; }
 const std::string& GUI::GetOutputFile() { return output_file_; }
 bool GUI::isHelpMode() const { return help_mode_; }
 
-//Выводить если пользователь попросил либо что-то кривое всунул
 void GUI::PrintHelp() {
     std::cout << "Usage: <filename> [options]" << std::endl;
     std::cout << "The options you can use:" << std::endl;
@@ -29,7 +28,7 @@ bool GUI::ConsoleParser(int argc, char* argv[]) {
                 input_file_ = argv[++i];
             else {
                 std::cerr << "ERROR: no input file name provided. \n"
-                             "Please enter '-h' ot '--help' for list of commands." << std::endl;
+                             "Please enter '-h' or '--help' for list of commands." << std::endl;
                 return false;
             }
         }
@@ -38,7 +37,7 @@ bool GUI::ConsoleParser(int argc, char* argv[]) {
                 output_file_ = argv[++i];
             else {
                 std::cerr << "ERROR: no file name provided. \n"
-                             "Please enter '-h' ot '--help' for list of commands." << std::endl;
+                             "Please enter '-h' or '--help' for list of commands." << std::endl;
                 return false;
             }
         }
@@ -52,7 +51,7 @@ bool GUI::ConsoleParser(int argc, char* argv[]) {
             }
             else {
                 std::cerr << "ERROR: no number of iterations provided. \n"
-                             "Please enter '-h' ot '--help' for list of commands." << std::endl;
+                             "Please enter '-h' or '--help' for list of commands." << std::endl;
                 return false;
             }
         }
