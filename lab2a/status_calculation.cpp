@@ -130,8 +130,8 @@ bool GameLogic::ParsingString(std::string& line) {
 //FOR EXPERIMENTAL PURPOSES: WORKS WITH WINDOWS SYSTEM ONLY!
 //Sorry for system("cls"), I know this is pure evil...
 
-//exclusive: smth like "play 42" - display all 42 iter-s of the field.
-//If there is no cells felt, the GAME is OVER!
+//exclusive: something like "play 42" - display all 42 iter-s of the field.
+//If there is no cells left, this GAME is OVER!
 /*
  * bool GameLogic::PlayLive(int iterations) {
     if (iterations <= 0) {
